@@ -50,7 +50,7 @@ try {
     echo "OK";
 
 } catch(Exception $e) {
-    file_put_contents('essl_push_log.txt', "Insert Error: " . $e->getMessage() . "\n", FILE_APPEND);
+    file_put_contents('/tmp/essl_push_log.txt', "Insert Error: " . $e->getMessage() . "\n", FILE_APPEND);
     echo "ERROR";
 }
 ?>
