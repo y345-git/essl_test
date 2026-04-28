@@ -4,7 +4,7 @@
 header('Content-Type: text/plain');
 
 // Log all incoming requests (very useful for debugging)
-file_put_contents('essl_push_log.txt', 
+file_put_contents('/tmp/essl_push_log.txt', 
     date('Y-m-d H:i:s') . " | IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'unknown') . "\n" .
     print_r($_REQUEST, true) . "\n----------------------------------------\n", 
     FILE_APPEND);
