@@ -10,13 +10,14 @@ file_put_contents('essl_push_log.txt',
     FILE_APPEND);
 
 // MySQL Connection using Coolify internal service name
-$host = '45.9.2.197:3306';                    // Use the exact service name you gave to MySQL
+$host = '45.9.2.198';                    // Use the exact service name you gave to MySQL
+$port = '3306';
 $db   = 'essl_data';
 $user = 'root';
 $pass = 'root';     // ← Change this
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$db;charset=utf8mb4", $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     file_put_contents('essl_push_log.txt', "DB Error: " . $e->getMessage() . "\n", FILE_APPEND);
